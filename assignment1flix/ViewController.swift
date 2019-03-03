@@ -78,6 +78,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    //preparation for next screen
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Loading up the details screen")
+        
+        //find the selected movie
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        
+        
+        //pass the selected movie to the detailsviewcontroller
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        detailsViewController.movie = movie //referring to movie previously found in above lines
+        
+        //removes highlighted selection of cell row after returning to home page
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
 
 
 }
