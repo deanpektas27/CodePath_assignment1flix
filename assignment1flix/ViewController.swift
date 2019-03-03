@@ -73,6 +73,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let posterPath = movie["poster_path"] as! String
         let posterUrl = URL(string: baseUrl + posterPath)
         
+        
         cell.posterView.af_setImage(withURL: posterUrl!)
         
         return cell
@@ -82,6 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Loading up the details screen")
+        
         
         //find the selected movie
         let cell = sender as! UITableViewCell

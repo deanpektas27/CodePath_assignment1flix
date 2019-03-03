@@ -1,43 +1,40 @@
 //
-//  MovieDetailsViewController.swift
+//  MovieCollectionViewController.swift
 //  assignment1flix
 //
-//  Created by Dean Pektas on 3/2/19.
+//  Created by Dean Pektas on 3/3/19.
 //  Copyright © 2019 dean. All rights reserved.
 //
 
 import UIKit
-import AlamofireImage
 
-class MovieDetailsViewController: UIViewController {
+class MovieCollectionViewController: UIViewController {
+    
+    var movie: [String:Any]!
 
-    
-    @IBOutlet weak var backdropView: UIImageView!
-    
-    @IBOutlet weak var posterView: UIImageView!
+    @IBOutlet weak var synopsisLabel: UILabel!
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var synopsisView: UILabel!
+    @IBOutlet weak var posterView: UIImageView!
     
-    
-    var movie: [String:Any]!
+    @IBOutlet weak var backdropView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        print(movie["title"])
         
         titleLabel.text = movie["title"] as? String
-        synopsisView.text = movie["overview"] as? String
+        synopsisLabel.text = movie["overview"] as? String
+        
+        titleLabel.text = movie["title"] as? String
+        synopsisLabel.text = movie["overview"] as? String
         
         let baseUrl = "https://image.tmdb.org/t/p/w185"
         let posterPath = movie["poster_path"] as! String
         let posterUrl = URL(string: baseUrl + posterPath)
-        
-        
-        
         
         posterView.af_setImage(withURL: posterUrl!)
         
@@ -46,8 +43,6 @@ class MovieDetailsViewController: UIViewController {
         
         backdropView.af_setImage(withURL: backdropUrl!)
     }
-    
-    
     
 
     /*
