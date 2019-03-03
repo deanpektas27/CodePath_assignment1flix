@@ -16,7 +16,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ### App Walkthough GIF
 
-<img src="http://g.recordit.co/zGMtOafPLC.gif" width=250><br>
+<img src="http://g.recordit.co/RU8tHJxULJ.gif" width=250><br>
 
 ### Notes
 Had trouble figuring out how to take video ID from selected movie and combine it with a Youtube link request in a web view.
